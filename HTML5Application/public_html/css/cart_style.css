@@ -1,0 +1,80 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016-4-11, 19:15:24
+    Author     : Bluewhale
+*/
+body{
+    background-color: #fdfdf9;
+}
+
+.cart_data{
+    border: 1px #ededc6 solid;
+    background-color: #faffeb;
+    height: 85px;
+    margin-top: 5px;
+    
+    position: relative;
+}
+
+.cart_data:active{
+    background-color: #f9fbb9;
+}
+
+.dishpic{
+    padding: 5px;
+    height: 70px;
+    width: 70px;
+}
+.di_name{
+    position: absolute;
+    top:7px;
+    padding-left: 5px;
+    
+    font-family: "微软雅黑";
+    color: #333333;
+    font-size: 16px;
+}
+.di_al{
+    position: absolute;
+    top:44px;
+    padding-left: 5px;
+    font-size: 10px;
+    color: #666;
+    font-family: "微软雅黑";
+}
+.di_date{
+    color: #666;
+    position: absolute;
+    top:60px;
+    left: 85px;
+    font-size: 10px;
+    font-family: "微软雅黑";
+}
+
+.di_money{
+    position: absolute;
+    top:52px;
+    left: 77%;
+    font-size: 15px;
+    padding-left: 10px;
+    color: #666;
+    font-family: "黑体";
+}
+.rank1,.rank2,.rank3,.rank4,.rank5{
+    position: absolute;
+    top:12px;
+    height: 15px;
+}
+
+.rank1{left: 50%;} .rank2{left: 54%;} .rank3{left: 58%;} .rank4{left: 62%;}.rank5{left: 66%;}
+
+.spf{
+    position: absolute;
+    top:33px;
+    left: 94%;
+    height: 20px;
+}

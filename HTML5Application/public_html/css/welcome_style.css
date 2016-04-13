@@ -1,0 +1,80 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016-4-6, 11:38:08
+    Author     : Bluewhale
+*/
+body {
+    width: 100%;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    color: #323232;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    background-color: #jjjjjj;
+    -webkit-text-size-adjust: 100%!important;
+}
+
+
+.title{
+    font-family:"楷体";
+    padding: 18px;
+    font-size: 22px;
+    color: #595959;
+}
+.ipt{
+    background-color: #FAFAFA;
+    text-align: center;
+    border:0px;
+    height: 30px;
+    width: 75px;
+    border-radius: 4px;  
+    font-size: 13px;
+}
+.ipt:focus{
+    background-color: #F5F5F5;
+    border-color: whitesmoke;
+    border: 3px;
+}
+#submit{
+    margin-top: 20px;
+    background-color: #08e ;
+    border:0px;
+    height: 28px;
+    width: 230px;
+    border-radius: 2px;
+    color: white;
+    font-size: 14px;  
+    font-family: "黑体";
+}
+#submit:focus{
+    background-color: lightskyblue;
+    
+}
+.icon{
+    align-items: center;
+    height: 20px;
+    margin-top: 12px;
+}
+
+fieldset{
+    padding-top: 37%;
+    font-family: "黑体";
+    border: 0px;
+    text-align: center;
+}
+
+.rgt{
+    border: 0px;
+    background-color: white;
+    font-size: 17px;
+    color: #08f;
+    font-family:黑体;
+}
+
+.rgt:focus{
+    color: deepskyblue;
+}
