@@ -8,16 +8,25 @@ and open the template in the editor.
     Author     : Bluewhale
 */
 body{
-    background-color:white;
+    background-color: #fdfdf9;
 }
 
 .cart_data{
-    border: 1px #eef4fd solid;
-    background-color: #fcfdfe;
+    border: 1px #ededc6 solid;
+    background-color: #faffeb;
     height: 85px;
     margin-top: 5px;
-    
+    margin-left:20%;
     position: relative;
+}
+.cart_list{
+	border: 1px #ededc6 solid;
+    background-color: #faffeb;
+    height: 85px;
+    position: relative;
+}
+.cart_data:active{
+    background-color: #f9fbb9;
 }
 
 .dishpic{
@@ -31,21 +40,12 @@ body{
     padding-left: 5px;
     
     font-family: "微软雅黑";
-    color: #393939;
+    color: #333333;
     font-size: 16px;
 }
 .di_al{
     position: absolute;
     top:44px;
-    padding-left: 5px;
-    font-size: 10px;
-    color: #666;
-    font-family: "微软雅黑";
-}
-
-.di_in{
-    position: absolute;
-    top:30px;
     padding-left: 5px;
     font-size: 10px;
     color: #666;
@@ -91,17 +91,16 @@ body{
 }
 
 .position select {
-    background-color: white;
-    border:none;
-    font-family: "黑体";
-    font-size: 15px;
-    position: fixed;
-    top:50px;
-    left: 41%;
-    /*很关键：将默认的select选择框样式清除*/
-    appearance:none;
-    -moz-appearance:none;
-    -webkit-appearance:none;
+  border:none;
+  font-family: "黑体";
+  font-size: 15px;
+  position: fixed;
+  top:50px;
+  left: 41%;
+  /*很关键：将默认的select选择框样式清除*/
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
 
 }
 
@@ -109,20 +108,20 @@ body{
 .position select::-ms-expand { display: none; }
 
 .acpt_button{
-    background-color: #92c1ef;
     position: fixed;
     left: 81%;
-    margin-top: 50px;
+    margin-top: 55px;
     
+    background-color: #ffffff;
     text-align: center;
-    border:none ;
-    height: 25px;
-    width: 60px;
-    border-radius: 3px;  
-    font-size: 13px;
+    border:1px #666 solid ;
+    height: 23px;
+    width: 55px;
+    border-radius: 4px;  
+    font-size: 10px;
     font-family: "黑体";
-    color: white;
+    color:  #666;
 }
 .acpt_button:focus{
-    background-color: tomato;
+    background-color: yellow;
 }

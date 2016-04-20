@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>订单</title>
+        <title>订单状态</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css\general_style.css" rel="stylesheet" type="text/css" />
@@ -14,17 +14,23 @@ and open the template in the editor.
     </head>
     <body>
         <div class="header">
-            <a href="cartpage.html"><img class="back" src="Images/icon/arrow.png" alt="返回"/></a>
+            <a href="songpage.html"><img class="back" src="Images/icon/arrow.png" alt="返回"/></a>
             <span class="theme" >&nbsp;&nbsp;订单详情</span>
         </div>
         <div class="clearfix_head"></div>
-        <div class="cus_info">
-            <img class="cood" src="Images/icon/coodicongrey.png" alt="cood:"/> 
-            <p>收货人：<span>王同学</span><span class="cus_phone">13822222222</span></p>
-            <img class="spf" src="Images/icon/arrow2.png" alt="详情"/>
-            <p>送达地址：<span>十六号宿舍楼414</span></p>
+        <div class="order_al">
+            <p class="order_al1">这枚订单正在等待好心人</p>
+            <p class="order_al2">取单地点：四食堂2号窗口</p>
+            <img class="order_al_pic" src="Images/dishes/fen.jpg" alt="食物图片"/>
+            <img class="spf" style="top:90px" src="Images/icon/arrow2.png" alt="详情"/>
         </div>
-        
+        <div class="cus_info" style="margin-top: 20px;">
+            <img class="cood_song" src="Images/icon/coodicongrey.png" alt="cood:"/> 
+            <p>点单人：<span>李同学</span><span class="cus_phone">13822222222</span></p>
+            <p>订单编号：<span>2222222222</span></p>
+            <p>送达地址：<span>十六号宿舍楼414</span></p>
+            <p>送达时间：<span>4-15 16:59（尽快送达）</span></p>
+        </div>
         <div class="order_info">
             <p class="order_name">云南米线</p>
             <div class="order_menu">
@@ -37,9 +43,11 @@ and open the template in the editor.
             <div class="discount_info"><p><span class="discount_type">优惠券</span> <span class="discount_amt">2 元</span></p></div>
             <div class="cost_info"><p>实付金额： <span class="cost_money">13 元</span></p></div>
         </div>
+        
         <div class="clearfix_foot"></div>
-        <a href="paypage.html"><div class="order_footer">
-            <span>确认下单</span>
+        <a href="songpage.html">
+        <div class="order_footer">
+            <span>接单</span>
         </div></a>
     </body>
 </html>

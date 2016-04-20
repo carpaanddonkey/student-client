@@ -38,10 +38,12 @@ and open the template in the editor.
     overflow:hidden;
 } 
 
-.clearfix_head{  height: 35px; }  .clearfix_foot{  height: 45px;}
+.clearfix_head{  height: 40px; }  .clearfix_foot{  height: 45px;}
 .theme{
+    font-family: "黑体";
     position: fixed;
     top: 11px;
+    font-size: 16px;
 }
 .back{
     padding-top: 12px;
@@ -103,11 +105,18 @@ and open the template in the editor.
     
     position: fixed;
     top:8px;
-    left: 35%;
+    left: 33%;
     height: 23px;
     font-size: 13px;
     font-family: "黑体";
     
+}
+
+.header_table a{
+    font-size: 13px;
+    font-family: "黑体";
+    text-decoration: none;
+    color: white;
 }
 
 .header_table_tdleft{
