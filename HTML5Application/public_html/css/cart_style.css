@@ -16,8 +16,12 @@ body{
     background-color: #fcfdfe;
     height: 85px;
     margin-top: 5px;
-    
+    border-radius: 4px;  
     position: relative;
+    
+    -webkit-box-shadow: #e2f0ff 0px 0px 2px;
+    -moz-box-shadow: #e2f0ff 0px 0px 2px;
+    box-shadow: #e2f0ff 0px 0px 2px;
 }
 
 .dishpic{

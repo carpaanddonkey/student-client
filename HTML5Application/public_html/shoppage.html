@@ -11,37 +11,31 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css\general_style.css" rel="stylesheet" type="text/css" />
         <link href="css\shop_style.css" rel="stylesheet" type="text/css"/>
-		<link href="css\cart_style.css" rel="stylesheet" type="text/css" />
+        <link href="css\cart_style.css" rel="stylesheet" type="text/css" />
+        <link href="css\style.css" rel="stylesheet" type="text/css" />
+        <script src="js/menu.js"></script>
+        <script src="js/jquery-1.8.3.min.js"></script>
+        <script src="js/banner.js"></script>
     </head>
+    
     <div class="header">
         <img class="back" style="height: 24px;padding-top: 7px;" src="Images\icon\white_logoicon.png" alt=""/>           
         <img class="scan" src="Images/icon/scanicon.png" alt="scan"/>
+        <img src="Images/icon/coodicon.png" alt="cood:" class="cood"/> 
+        <select id="messhall">
+            <option>学活一层</option>
+            <option>学活二层</option>
+            <option>四食堂一层</option>
+        </select>
     </div>
     <div class="clearfix_head"></div>
-	<a href="diancai.html">
-	    <div class="cart_data">
-		
-                <img class="dishpic" src="Images/dishes/fen.jpg" alt="食物图片"/><img class="spf" src="Images/icon/arrow2.png" alt="详情"/>
-                <span class="di_name">牛肉粉</span>
-                <img class="rank1" src="Images\icon\star1.png" alt=""/><img class="rank2" src="Images\icon\star1.png" alt=""/>
-                <img class="rank3" src="Images\icon\star1.png" alt=""/><img class="rank4" src="Images\icon\star1.png" alt=""/>
-                <img class="rank5" src="Images\icon\star1.png" alt=""/>
-                <span class="di_money">销量1.1万</span>
-            </div>
-        </a>
-	<a href="diancai.html">
-	<div class="cart_data">
-                <img class="dishpic" src="Images/dishes/fen.jpg" alt="食物图片"/><img class="spf" src="Images/icon/arrow2.png" alt="详情"/>
-                <span class="di_name">牛肉粉</span>
-                <img class="rank1" src="Images\icon\star1.png" alt=""/><img class="rank2" src="Images\icon\star1.png" alt=""/>
-                <img class="rank3" src="Images\icon\star1.png" alt=""/><img class="rank4" src="Images\icon\star1.png" alt=""/>
-                <img class="rank5" src="Images\icon\star1.png" alt=""/>
-                <span class="di_money">销量1.1万</span>
-        </div>
-        </a>
+    <div>
+        <input type="text" class="search" placeholder="搜索"/>
+    </div>
+    
     
 	<a href="diancai.html">
-	    <div class="cart_data">
+	    <div class="cart_data">		
                 <img class="dishpic" src="Images/dishes/fen.jpg" alt="食物图片"/><img class="spf" src="Images/icon/arrow2.png" alt="详情"/>
                 <span class="di_name">牛肉粉</span>
                 <img class="rank1" src="Images\icon\star1.png" alt=""/><img class="rank2" src="Images\icon\star1.png" alt=""/>
@@ -50,7 +44,17 @@ and open the template in the editor.
                 <span class="di_money">销量1.1万</span>
             </div>
         </a>
-		
+	<!--全屏滚动-->
+    <div class="banner">
+        <div class="b-img">
+            <a href="#" style="background:url(Images/fen.jpg) center no-repeat;"></a>
+            <a href="#" style="background:url(Images/fen.jpg) center no-repeat;"></a>
+            <a href="#" style="background:url(Images/fen.jpg) center no-repeat;"></a>
+        </div>
+        <div class="b-list"></div>
+        <a class="bar-left" href="#"><em></em></a><a class="bar-right" href="#"><em></em></a> 
+    </div>
+    <!--end 全屏滚动-->
         <div class="footer">
             <table>
                 <tr >
