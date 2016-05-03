@@ -2,8 +2,6 @@ package com.example.efia.byway;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 

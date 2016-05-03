@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>顺道儿——购物车</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css\general_style.css" rel="stylesheet" type="text/css" />
+        <link href="css\cart_style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="header">
+            <img class="back" style="height: 24px;padding-top: 7px;" src="Images\icon\white_logoicon.png" alt=""/>
+            <table class="header_table" style="left: 24%;">
+                <tr>
+                    <td class="header_table_tdleft"><a href="songpage.html"> &nbsp待送订单&nbsp </a></td>
+                    <td  class="header_table_tdleft"  style="background-color: rgba(255,255,255,0.3)"><a href="song_taken_page.html">&nbsp已接订单&nbsp</a></td>
+                    <td><a href="song_history_page.html">&nbsp历史订单&nbsp</a></td>
+                </tr>
+            </table>
+            <img class="scan" src="Images/icon/scanicon.png" alt="scan"/>
+        </div>
+        <div class="clearfix_head"></div>
+        
+        <div id="cart_body">
+            <a href="song_orderform.html">
+            <div class="cart_data">
+                <img class="dishpic" src="Images/dishes/dumpling.jpg" alt="食物图片"/>
+                <span class="di_name">水饺</span>
+                <span class="di_in">王同学 1888888888</span>
+                <span class="di_al">十二号宿舍楼</span>
+                <input class="acpt_button" type="button" value="送 达"/>
+                <p class="di_date">期望送达时间：今日19:11前</p>
+            </div>
+            </a>
+            <a href="song_orderform.html">
+            <div class="cart_data">
+                <img class="dishpic" src="Images/dishes/dumpling.jpg" alt="食物图片"/>
+                <span class="di_name">水饺</span>
+                <span class="di_in">王同学 1888888888</span>
+                <span class="di_al">十二号宿舍楼</span>
+                <input class="acpt_button" type="button" value="送 达"/>
+                <p class="di_date">期望送达时间：今日19:11前</p>
+            </div>
+            </a>
+        </div>      
+        <div class="clearfix_foot"></div>
+        <div class="footer">
+            <table>
+                <tr >
+                    <td><a href="shoppage.html" id="present"><img class="mymenu" id="menu_bar" src="Images/icon/shop.png" alt="菜单" /><br/>菜单</a></td>
+                    <td><a href="cartpage.html"><img class="mymenu" id="cart_bar" src="Images/icon/cart.png" alt="购物车" /><br/>&nbsp购物车</a></td>
+                    <td><a href="songpage.html"><img class="mymenu" id="song_bar" src="Images/icon/song1.png" alt="配送"><br/>配送</a> </td>
+                    <td><a href="mepage.html"><img class="mymenu" id="me_bar" src="Images/icon/me.png"  alt="我的" /><br/>我的</a></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
