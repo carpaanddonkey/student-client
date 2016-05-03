@@ -1,4 +1,4 @@
-package com.example.efia.byway;
+﻿package com.example.efia.byway;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -17,8 +17,7 @@ public class ByWay extends Activity  {
         myWebView = (WebView) findViewById(R.id.webView);
         WebSettings wSet = myWebView.getSettings();
         wSet.setJavaScriptEnabled(true);//设置在web中调用js
-
-        myWebView.loadUrl("file:///android_asset/hellopage.html");
+	myWebView.loadUrl("http://web.byway.net.cn/student/hellopage.html");
 
     }
 
