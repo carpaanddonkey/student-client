@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\Efia\\Documents\\GitHub\\student-client\\ByWay\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Efia\\Documents\\GitHub\\student-client\\ByWay\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\soft\\Android\\AndroidStudioProjects\\ByWay\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\ic_launcher.png",
         "source": "D:\\soft\\Android\\AndroidStudioProjects\\ByWay\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     }
