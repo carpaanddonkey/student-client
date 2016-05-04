@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/Sunshine_Jeremy/Developer/carpaanddonkey/student-client/ByWay/app/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/Sunshine_Jeremy/Developer/carpaanddonkey/student-client/ByWay/app/src/debug/jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="D:\soft\Android\AndroidStudioProjects\ByWay\app\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="D:\soft\Android\AndroidStudioProjects\ByWay\app\src\debug\jniLibs"/></dataSet></merger>
