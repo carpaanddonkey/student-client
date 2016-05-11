@@ -12,16 +12,13 @@ body{
 }
 
 .cart_data{
-    border: 1px #eef4fd solid;
-    background-color: #fcfdfe;
+    border-bottom: 1px #f2f8fd solid;   
+    color:  #878787;
     height: 85px;
-    margin-top: 5px;
+    margin-top: 2px;
     border-radius: 4px;  
     position: relative;
     
-    -webkit-box-shadow: #e2f0ff 0px 0px 2px;
-    -moz-box-shadow: #e2f0ff 0px 0px 2px;
-    box-shadow: #e2f0ff 0px 0px 2px;
 }
 
 .dishpic{
@@ -35,15 +32,16 @@ body{
     padding-left: 5px;
     
     font-family: "微软雅黑";
-    color: #393939;
+    
+    color:  #878787;
     font-size: 16px;
 }
 .di_al{
     position: absolute;
     top:44px;
     padding-left: 5px;
-    font-size: 10px;
-    color: #666;
+    font-size: 10px;  
+    color:  #878787;
     font-family: "微软雅黑";
 }
 
