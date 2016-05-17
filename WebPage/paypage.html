@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>付款信息</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css\general_style.css" rel="stylesheet" type="text/css" />
+        <link href="css\paypage_style.css" rel="stylesheet" type="text/css" />
+        <script src="js/cookies.js"></script>
+    </head>
+    <body onload="initPaypage(1)">
+        <div class="header">
+            <a href="orderform.html"><img class="back" src="Images/icon/arrow.png" alt="返回"/></a>
+            <span class="theme" >&nbsp;&nbsp;付款详情</span>
+        </div>
+        <div class="clearfix_head"></div>
+        <img class="paymenticon" src="Images/icon/payment.png" alt=""/>
+        <div class="payment_info">
+            <p>
+                支付宝账号：&nbsp;&nbsp;
+                <select>
+                    <option>188****1183</option>
+                </select>
+            </p>
+            <p>支付密码：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="ipt" type="password"/></p>
+            <div class="cost_info"><p>需付金额：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="cost_money" id="cost_money">13 元</span></p></div>
+        </div>
+        <div class="clearfix_foot"></div>
+        <a href="paymentsuccess.html"><input class="paybutton" type="button" value="确认付款"/></a>
+    </body>
+</html>
+

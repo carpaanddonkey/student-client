@@ -1,0 +1,89 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016-4-18, 14:25:29
+    Author     : Bluewhale
+*/
+
+.payment_hint{
+    font-family: "微软雅黑";
+    font-size: 25px;
+    
+    padding: 30px;
+    text-align: center;
+    color: #595959;
+}
+
+.payment_info{ 
+    padding:15px;
+    position: relative;
+    font-size: 14px;
+    margin-left: 20%;
+    margin-top: 30px;
+    font-family: "微软雅黑";
+}
+
+.payment_info p{
+    padding-top: 10px;
+}
+
+.payscbutton{
+    margin-bottom: 20px;
+}
+
+.paybutton,.payscbutton{
+    margin-left: 13%;
+    background-color: #08f;
+    color: white;
+    text-align: center;
+    border:0px;
+    height: 30px;
+    width: 300px;
+    border-radius: 4px;  
+    font-size: 14px;
+    font-family: "黑体";
+}
+
+.paybutton:focus,.payscbutton:focus{
+    background-color: #F5F5F5;
+    border-color: whitesmoke;
+    border: 3px;
+}
+
+select {
+    background-color: white;
+    border:none;
+    font-family: "黑体";
+    font-size: 15px;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+}
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }
+
+.ipt{
+    border: 1px #CACACA solid;
+    text-align: center;
+    height: 25px;
+    width: 100px;
+    border-radius: 4px;  
+    font-size: 13px;
+}
+.ipt:focus{
+    background-color: #F5F5F5;
+    border-color: whitesmoke;
+    border: 3px;
+}
+
+.paymenticon{
+    height:90px;
+    margin-left: 39%;
+    margin-top: 15%;
+}

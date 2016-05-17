@@ -1,0 +1,122 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016-4-9, 17:10:54
+    Author     : Bluewhale
+*/
+.cood{
+    position: absolute;
+    top:11px;
+    margin-left: 28%;
+    height: 18px;
+}
+select {
+    background-color: #08f;
+    color: white;
+    
+    border:none;
+    font-family: "黑体";
+    font-size: 15px;
+    position: absolute;
+    top:12px;
+    left: 43%;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+}
+
+select::-ms-expand { display: none; }
+.search,.search_2{
+    
+    border: 1.5px #e5e5e5 solid;
+    text-align: center;
+    height: 27px;
+    width: 99.2%;
+    border-radius: 4px;  
+    font-size: 13px;
+}
+
+.search_2{
+    text-align: left;
+    padding-left: 10px;
+}
+
+.search:focus{
+    
+    background-color: #F5F5F5;
+    border-color: whitesmoke;
+}
+
+.search_button{
+    position: absolute;
+    right: 0px;
+    top:40px;
+    height: 28px;
+    width: 100px;
+    font-family: "黑体";
+    background-color: #e5e5e5;
+    border: none;
+    color: #bbb;
+    z-index: 1;
+}
+
+.search_button:hover{
+     transition:background-color 0.7s;
+    -moz-transition:background-color 0.7s; /* Firefox 4 */
+    -webkit-transition:background-color 0.7s; /* Safari and Chrome */
+    -o-transition:background-color 0.7s; /* Opera */
+    background-color: #08e;
+    color: white;
+}
+
+body{
+    background-color: #fdfdf9;
+}
+
+.search_item{
+    border: 0.5px #eef4fd solid;
+    background-color: #fcfdfe;
+    height: 35px;
+    margin-top: -1px; 
+    position: relative;
+    
+    font-size: 8px;
+}
+
+.search_item span{
+    position: absolute;
+    top:7px;
+    padding-left: 10px;
+    
+    font-family: "微软雅黑";
+    color: #393939;
+    font-size: 14px;
+}
+
+.pic_box{
+    height: 180px;
+}
+
+.pic_lo{
+    height: 180px;
+    width: 100%;
+}
+
+.pic_menu{
+    position: absolute;
+    right: 5%;
+    top: 225px;
+    
+    font-family: "黑体";
+    font-size: 12px;
+    color: #08f;
+}
+
+.pic_menu img{
+    height: 15px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>顺道儿——菜单</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css\general_style.css" rel="stylesheet" type="text/css" />
+        <link href="css\shop_style.css" rel="stylesheet" type="text/css"/>
+        <link href="css\cart_style.css" rel="stylesheet" type="text/css" />
+        <script src="js/menu.js"></script>
+    </head>
+    <body onload="javascript:setInterval('change_pic();',10000);change_pic()" >   
+    <div class="header">
+        <img class="back" style="height: 24px;padding-top: 7px;" src="Images\icon\white_logoicon.png" alt=""/>           
+        <a href="camerapage.html"><img class="scan" src="Images/icon/scanicon.png" alt="scan"/></a>
+        <img src="Images/icon/coodicon.png" alt="cood:" class="cood"/> 
+        <select id="messhall">
+            <option>学活一层</option>
+            <option>学活二层</option>
+            <option>四食堂一层</option>
+        </select>
+    </div>
+    <div class="clearfix_head"></div>
+    <div>
+        <a href="searchpage.html"><input type="text" class="search" placeholder="搜索热门菜品"/></a>
+    </div>
+    
+    <div class="pic_box"> 
+        <div class="pic_menu">
+            <a onclick="change_pic()"><img src="Images/icon/change.png" alt="change"/> </a>
+        </div>       
+        <img class="pic_lo"  id="pic_lo" alt=""/>
+    </div>
+    
+	<a href="windowpage.html">
+	    <div class="cart_data" style="margin-top: 0px;">		
+                <img class="dishpic" src="Images/dishes/fen.jpg" alt="食物图片"/><img class="spf" src="Images/icon/arrow2.png" alt="详情"/>
+                <span class="di_name">一号窗口</span>
+                <img class="rank1" src="Images\icon\star1.png" alt=""/><img class="rank2" src="Images\icon\star1.png" alt=""/>
+                <img class="rank3" src="Images\icon\star1.png" alt=""/><img class="rank4" src="Images\icon\star1.png" alt=""/>
+                <img class="rank5" src="Images\icon\star.png" alt=""/>     
+                <span class="di_al">热卖：黄焖鸡米饭、云南米线</span>
+                <span class="di_date">销量 1.1 万</span>
+            </div>
+        </a>
+
+    <a href="windowpage.html">
+	    <div class="cart_data" style="margin-top: 0px;">		
+                <img class="dishpic" src="Images/dishes/zhou.jpg" alt="食物图片"/><img class="spf" src="Images/icon/arrow2.png" alt="详情"/>
+                <span class="di_name">二号窗口</span>
+                <img class="rank1" src="Images\icon\star1.png" alt=""/><img class="rank2" src="Images\icon\star1.png" alt=""/>
+                <img class="rank3" src="Images\icon\star1.png" alt=""/><img class="rank4" src="Images\icon\star1.png" alt=""/>
+                <img class="rank5" src="Images\icon\star.png" alt=""/>     
+                <span class="di_al">热卖：皮蛋瘦肉粥、紫米粥</span>
+                <span class="di_date">销量 2 万</span>
+            </div>
+        </a>
+       
+    <div class="clearfix_foot"></div>
+    <div class="footer" > 
+            <table>
+                <tr >
+                    <td><a href="shoppage.html"  id="present"><img class="mymenu" id="menu_bar" src="Images/icon/shop1.png" alt="菜单" /><br/>菜单</a></td>
+                    <td><a href="cartpage.html"><img class="mymenu" id="cart_bar" src="Images/icon/cart.png" alt="订单" /><br/>订单</a></td>
+                    <td><a href="songpage.html"><img class="mymenu" id="song_bar" src="Images/icon/song.png" alt="配送"><br/>配送</a> </td>
+                    <td><a href="mepage.html"><img class="mymenu" id="me_bar" src="Images/icon/me.png"  alt="我的" /><br/>我的</a></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
