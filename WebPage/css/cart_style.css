@@ -1,0 +1,134 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016-4-11, 19:15:24
+    Author     : Bluewhale
+*/
+body{
+    background-color:white;
+}
+
+.cart_data{
+<<<<<<< HEAD:HTML5Application/public_html/css/cart_style.css
+    border-bottom: 1px #f2f8fd solid;   
+=======
+    border-bottom: 1px #CCC solid;   
+>>>>>>> developer:WebPage/css/cart_style.css
+    color:  #878787;
+    height: 85px;
+    margin-top: 2px;
+    border-radius: 4px;  
+    position: relative;
+    
+}
+
+.dishpic{
+    padding: 5px;
+    height: 70px;
+    width: 70px;
+}
+.di_name{
+    position: absolute;
+    top:7px;
+    padding-left: 5px;
+    
+    font-family: "微软雅黑";
+    
+    color:  #878787;
+    font-size: 16px;
+}
+.di_al{
+    position: absolute;
+    top:44px;
+    padding-left: 5px;
+    font-size: 10px;  
+    color:  #878787;
+    font-family: "微软雅黑";
+}
+
+.di_in{
+    position: absolute;
+    top:30px;
+    padding-left: 5px;
+    font-size: 10px;
+    color: #666;
+    font-family: "微软雅黑";
+}
+.di_date{
+    color: #666;
+    position: absolute;
+    top:60px;
+    left: 85px;
+    font-size: 10px;
+    font-family: "微软雅黑";
+}
+
+.di_money{
+    position: absolute;
+    top:52px;
+    left: 77%;
+    font-size: 15px;
+    padding-left: 10px;
+    color: #666;
+    font-family: "黑体";
+}
+.rank1,.rank2,.rank3,.rank4,.rank5{
+    position: absolute;
+    top:12px;
+    height: 15px;
+}
+
+.rank1{left: 50%;} .rank2{left: 54%;} .rank3{left: 58%;} .rank4{left: 62%;}.rank5{left: 66%;}
+
+.spf{
+    position: absolute;
+    top:33px;
+    left: 94%;
+    height: 20px;
+}
+
+.position img{
+    margin-top: 8px;
+    margin-left: 10px;
+    height: 20px;
+}
+
+.position select {
+    background-color: white;
+    border:none;
+    font-family: "黑体";
+    font-size: 15px;
+    position: fixed;
+    top:50px;
+    left: 41%;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+}
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+.position select::-ms-expand { display: none; }
+
+.acpt_button{
+    background-color: #92c1ef;
+    position: fixed;
+    left: 81%;
+    margin-top: 50px;
+    
+    text-align: center;
+    border:none ;
+    height: 25px;
+    width: 60px;
+    border-radius: 3px;  
+    font-size: 13px;
+    font-family: "黑体";
+    color: white;
+}
+.acpt_button:focus{
+    background-color: tomato;
+}

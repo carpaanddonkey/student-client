@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>顺道儿——菜单</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css\window_style.css" rel="stylesheet" type="text/css"/>
+        <script src="js/menu.js"></script>
+        <script src="js/cookies.js"></script>
+        <script src="js/ajax.js"></script>
+        <script type = "text/javascript">
+       // <!script type = "text/javascript">
+        var windows;
+        var windows_id = 1;
+        var product;
+         function load(url,div_id)
+        {
+            loadData('http://api.shundaoer.net.cn/v1/windows/'+windows_id+'/',windows,div_id);
+        }
+
+        function loadData(url,obj,div_id)
+        {
+            ajax(url,function(str){
+            //将JSON 数据来生成原生的 JavaScript 
+              obj = JSON.parse(str);
+              if(typeof(obj.length)=="undefined")
+                loadObject(obj,div_id);
+              else 
+                loadJson(obj,div_id);
+              for(i in obj)
+                alert(obj[i]);
+              });
+        }
+        function loadwindow_header()
+        {
+            document.getElementById('dishpic').innerHTML = windows.window;
+            document.getElementById('di_name').innerHTML = windows['window']['name'];
+        }
+/*
+        function loadJson(arr,div_id)
+        {
+            var txt = "";
+            for(i in arr)
+            {
+                txt+='<div class="window_header"><a href="shoppage.html"><img class="back" src="Images/icon/arrow.png" alt="返回"/></a>';
+                txt+='<img class="dishpic" src="'+arr[i].picture+'" alt="食物图片"/>';
+                txt+='<span class="di_name" id="di_name">'+arr[i].name+'</span>';
+                for(var j = 1;j<=5;j++)
+                {
+                    alert("j"+j);
+                    //if(j<arr.windows_data.score)
+                        txt+='<img class = "rank'+j+'" src="Images/icon/star1.png" alt=""/>';
+                    //else
+                        txt+='<img class = "rank'+j+'"src="Images/icon/star.png" alt=""/>';
+
+                }
+                   txt+='<span class="di_al">热卖：'+arr.description+'</span>';
+                txt+='<span class="di_sell">销量 1.1 万</span></div><div class="clearfix_head"></div><div class="mainframe">';
+                txt+='<div class="link_sheet">';
+                txt+='<a href="#" onclick="changePages(1)"><p>经典鸡米饭</p></a>'+
+            '<a href="#" onclick="changePages(2)"><p>云南米线</p></a>'+
+            '<a href="#" onclick="changePages(3)"><p>鸡米饭</p></a>'+
+            '<a href="#" onclick="changePages(4)"><p>米线</p></a>'+
+        '</div>'+
+        '<div class="iframe" id="iframe">'+
+            '<iframe src="iframepage.html"></iframe>'+
+        '</div>'+
+    '</div>'+
+    '<div class="shopping_cart" id="shopping_cart">'+
+        '<table id="table_shoppingcart">'+
+            '<colgroup>'+
+                '<col width="30%"/>'+
+                '<col width="20%"/>'+
+                '<col width="30%"/>'+
+                '<col width="20%"/>'+
+            '</colgroup>'+
+            '<tbody id="tablebody">'+
+                '<tr>'+
+                    '<th>商品名</th>'+
+                    '<th>价格</th>'+
+                    '<th>数量</th>'+
+                    '<th>操作</th>'+
+                 '</tr>'+
+            '</tbody>'+
+            '<tfoot>'+
+                '<tr>'+
+                    '<td></td>'+
+                    '<td></td>'+
+                    '<td></td>'+
+                    '<td></td>'+
+                '</tr>'+
+            '</tfoot>'+
+        '</table>'+'</div>';
+            addChild(txt,div_id);
+        }
+        */
+        function loadObject(arr,div_id)
+        {
+            var txt = "";
+            txt+='<div class="window_header">';
+            txt+='<a href="shoppage.html"><img class="back" src="Images/icon/arrow.png" alt="返回"/></a>';
+            txt+='<img class="dishpic" src="'+arr.picture+'" alt="食物图片"/>';
+            txt+='<span class="di_name" id="di_name">'+arr.name+'</span>';
+            for(var j = 1;j<=5;j++)
+            {
+                alert("j"+j);
+              // if(j<arr.windows_data.score)       
+                   txt+='<img class = "rank'+j+'" src="Images/icon/star1.png" alt=""/>';
+                //else
+                        txt+='<img class = "rank'+j+'"src="Images/icon/star.png" alt=""/>';
+
+            }
+                txt+='<span class="di_al">热卖：'+arr.description+'</span>';
+                txt+='<span class="di_sell">销量 1.1 万</span></div><div class="clearfix_head"></div><div class="mainframe">';
+                txt+='<div class="link_sheet">';
+                txt+='<a href="#" onclick="changePages(1)"><p>经典鸡米饭</p></a>'+
+            '<a href="#" onclick="changePages(2)"><p>云南米线</p></a>'+
+            '<a href="#" onclick="changePages(3)"><p>鸡米饭</p></a>'+
+            '<a href="#" onclick="changePages(4)"><p>米线</p></a>'+
+        '</div>'+
+        '<div class="iframe" id="iframe">'+
+            '<iframe src="iframepage.html"></iframe>'+
+        '</div>'+
+    '</div>'+
+    '<div class="shopping_cart" id="shopping_cart">'+
+        '<table id="table_shoppingcart">'+
+            '<colgroup>'+
+                '<col width="30%"/>'+
+                '<col width="20%"/>'+
+                '<col width="30%"/>'+
+                '<col width="20%"/>'+
+            '</colgroup>'+
+            '<tbody id="tablebody">'+
+                '<tr>'+
+                    '<th>商品名</th>'+
+                    '<th>价格</th>'+
+                    '<th>数量</th>'+
+                    '<th>操作</th>'+
+                 '</tr>'+
+            '</tbody>'+
+            '<tfoot>'+
+                '<tr>'+
+                    '<td></td>'+
+                    '<td></td>'+
+                    '<td></td>'+
+                    '<td></td>'+
+                '</tr>'+
+            '</tfoot>'+
+        '</table>'+'</div>';
+            addChild(txt,div_id);
+        }
+
+        function addChild(txt,div_id)
+        {
+            var div = document.getElementById(div_id);
+            var new_div = document.createElement("DIV");
+            new_div.innerHTML = txt;
+            div.appendChild(new_div);
+        }
+    </script>
+    </head>
+    <body onload="checkCookie(1);load('','windows_body');loadwindow_header();">
+    <div id = "windows_body">
+    <div class="window_header">
+        <a href="shoppage.html"><img class="back" src="Images/icon/arrow.png" alt="返回"/></a>
+        <img class="dishpic" id = "dishpic" src="Images/dishes/fen.jpg" alt="食物图片"/>
+        <span class="di_name" id="di_name">一号窗口 · 学活餐厅</span>
+        <img class="rank1" src="Images\icon\star1.png" alt=""/><img class="rank2" src="Images\icon\star1.png" alt=""/>
+        <img class="rank3" src="Images\icon\star1.png" alt=""/><img class="rank4" src="Images\icon\star1.png" alt=""/>
+        <img class="rank5" src="Images\icon\star.png" alt=""/>     
+        <span class="di_al">热卖：黄焖鸡米饭、云南米线</span>
+        <span class="di_sell">销量 1.1 万</span>
+    </div>
+    <div class="clearfix_head"></div>
+    <div class="mainframe">
+        <div class='link_sheet'>
+            <a href="#" onclick="changePages(1)"><p>经典鸡米饭</p></a>
+            <a href="#" onclick="changePages(2)"><p>云南米线</p></a>
+            <a href="#" onclick="changePages(3)"><p>鸡米饭</p></a>
+            <a href="#" onclick="changePages(4)"><p>米线</p></a>
+        </div>
+        <div class='iframe' id="iframe">
+            <iframe src='iframepage.html'></iframe>
+        </div>
+    </div>
+    <div class="shopping_cart" id="shopping_cart">
+        <table id="table_shoppingcart">
+            <colgroup>
+                <col width="30%"/>
+                <col width="20%"/>
+                <col width="30%"/>
+                <col width="20%"/>
+            </colgroup>
+            <tbody id="tablebody">
+                <tr>
+                    <th>商品名</th>
+                    <th>价格</th>
+                    <th>数量</th>
+                    <th>操作</th>
+                 </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    </div>
+    <div class="footer"  onclick="shoppingcart_show()">
+        <img class="f_scart" src="Images\icon\shoppingcart.png" alt="购物车"/>
+        <span class="f_money" id="f_money">¥ 0</span>
+        <span class="clear_cart" id="clear_cart" onclick="DelAllItem(1)">清空</span>
+        <a href="orderform.html"><div class="f_pay" id="f_pay">去结算</div></a>
+    </div>
+    
+    </body>
+</html>

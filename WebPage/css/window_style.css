@@ -1,0 +1,282 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016-5-9, 14:55:28
+    Author     : Bluewhale
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+   
+}
+
+.mainframe{
+    height: 100%;
+}
+
+.mainframe table {
+    width:100%;
+    height: 100%;
+    padding: 0px;
+}
+
+iframe{
+    float: right;
+    width: 77%;
+    height: 500px;
+    margin-top: 0px;
+    border: none;
+}
+
+.link_sheet {
+    float: left;
+    width:23%;
+}
+
+
+.link_sheet a{
+    text-decoration: none;
+}
+
+.link_sheet p{
+    position: relative;
+    top: 0%;
+    font-size: 12px;
+    margin-left: 0px;
+    padding: 8px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    color: #878787;
+    font-family: "黑体";
+}
+.link_sheet p:hover{
+    transition:background-color 0.7s;
+    -moz-transition:background-color 0.7s; /* Firefox 4 */
+    -webkit-transition:background-color 0.7s; /* Safari and Chrome */
+    -o-transition:background-color 0.7s; /* Opera */
+    background-color: #92c1ef;
+    color: white;
+    border-left:6px  lightsalmon solid;
+    box-shadow: 0px 1px 12px 0px rgba(50, 50, 50, 0.18);
+}
+
+.window_header{
+    position: fixed;
+    background-color: rgba(155,155,255,0.8);
+    height: 150px;
+    width: 100%;
+    color: white;
+    font-family: "楷体";
+    font-size: 17px;
+    
+    clear: both;
+    z-index: 100;
+}
+
+.back{
+    position: absolute;
+    padding-top: 17px;
+    padding-left: 17px;
+    height: 15px;
+}
+
+.dishpic{
+    position: absolute;
+    left: 27px;
+    top:50px;
+    height: 70px;
+    width: 70px;
+}
+.di_name{
+    position: absolute;
+    top:50px;
+    left: 110px;
+    
+    font-family: "微软雅黑";
+    color: white;
+    font-size: 15px;
+}
+.di_al{
+    position: absolute;
+    top:80px;
+    left: 110px;
+    font-size: 10px;
+    color: whitesmoke;
+    font-family: "微软雅黑";
+}
+
+.di_sell{
+    color: whitesmoke;
+    position: absolute;
+    top:100px;
+    left: 110px;
+    font-size: 10px;
+    font-family: "微软雅黑";
+}
+
+.rank1,.rank2,.rank3,.rank4,.rank5{
+    position: absolute;
+    top:54px;
+    height: 15px;
+}
+
+.shop_list{
+    font-family:  "微软雅黑";
+}
+
+.shop_list p{
+    padding: 5px;
+    font-size: 13px;
+    
+    background:#92c1ef;
+    color:white;
+    font-family: "黑体";
+}
+
+.rank1{left: 70%;} .rank2{left: 74%;} .rank3{left: 78%;} .rank4{left: 82%;}.rank5{left: 86%;}
+
+.clearfix_head{
+    zoom:1;
+    overflow:hidden;
+} 
+
+.clearfix_head{  height: 150px; }
+
+
+
+.i_dishpic{
+    position: absolute;
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+}
+.i_di_sell{
+    position: absolute;
+    top:45px;
+    padding-left: 80px;
+    
+    font-family: "微软雅黑";
+    color:  #878787;
+    font-size: 12px;
+}
+
+.i_di_name{
+    position: absolute;
+    top:7px;
+    padding-left: 80px;
+    
+    font-family: "微软雅黑";
+    color:  #878787;
+    font-size: 14px;
+}
+
+
+.i_di_money{
+    position: absolute;
+    top:8px;
+    left: 80%;
+    font-size: 15px;
+    padding-left: 10px;
+    color: coral;
+    font-family: "微软雅黑";
+}
+
+.i_cart_data{
+    border-bottom: 0.3px #e5e5e5 solid;
+    height: 70px;
+    position: relative;
+}
+
+.i_add_cart{
+    height: 18px;
+    position: absolute;
+    left: 88%;;
+    top: 43px;
+}
+.f_scart{
+    position: absolute;
+    left: 20px;
+    top: 7px;
+    height: 28px;
+    
+}
+.f_money{
+    position: absolute;
+    left: 20%;
+    top:20%;
+    color: white;
+    font-size: 20px;
+}
+
+.f_pay{
+    background-color: coral;
+    float: right;
+    height: 100%;
+    width: 100px;
+    color: white;
+    padding: 10px;
+    
+    display:none ;
+}
+.shopping_cart{
+    position:fixed;
+    left: 0px;
+    bottom: 43px;
+    font-family: "微软雅黑";
+    width: 100%;
+    background-color: rgba(80,80,80,0.7);
+    z-index:100;
+    display: none;
+}
+
+#table_shoppingcart{
+    width: 100%;
+    text-align: center;
+}
+
+#table_shoppingcart th{
+    color:white;
+    font-size: 12px;
+    font-family: "微软雅黑";
+}
+
+#table_shoppingcart td{
+    color: white;
+    font-family: "黑体";
+}
+
+#total{
+    color: white;
+    
+}
+
+.clear_cart{
+    position: absolute;
+    top:5px;
+    right: 140px;
+    color:white;
+    font-size: 12px;
+    padding: 8px;
+    display: none;
+}
+
+.am{
+    color: honeydew;
+    font-size: 20px;;
+}
+
+.footer{
+    position:fixed;
+    left: 0px;
+    bottom: 0px;
+    font-family: "微软雅黑";
+    text-align: center;
+    width: 100%;
+    height: 43px;
+    background-color: rgba(80,80,80,0.7);
+    z-index:100;
+} 

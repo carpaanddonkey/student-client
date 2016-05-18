@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>顺道儿——购物车</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css\general_style.css" rel="stylesheet" type="text/css" />
+        <link href="css\cart_style.css" rel="stylesheet" type="text/css" />
+        <script>
+        function load(url,div_id)
+        {
+            //调用ajax函数
+            //url = 'http://api.shundaoer.net.cn/v1/canteens/1/';
+            loadData('http://api.shundaoer.net.cn/v1/canteens/',canteens,'store_body');
+            loadData('http://api.shundaoer.net.cn/v1/canteens/'+canteens_id+'/',canteen,'store_body');
+            loadData('http://api.shundaoer.net.cn/v1/heatproducts/',heatproducts,'pic_box');
+
+            //loadCanteen('http://api.shundaoer.net.cn/v1/canteens/'+canteens_id+'/',canteen);
+            //loadCanteen('http://api.shundaoer.net.cn/v1/heatproducts/',heatproducts);
+            //ajax(url,function(str){
+            //将JSON 数据来生成原生的 JavaScript 
+            //  var arr = JSON.parse(str);
+              //alert(arr['windows_data']['score']);
+              //if(typeof(arr.length)=="undefined")loadObject(arr,div_id);
+              //else 
+              //loadJson(arr,div_id);
+            //});
+        }
+        function loadData(url,obj,div_id)
+        {
+            ajax(url,function(str){
+            //将JSON 数据来生成原生的 JavaScript 
+              obj = JSON.parse(str);
+              if(typeof(obj.length)=="undefined")loadObject(obj,div_id);
+              else 
+              loadJson(obj,div_id);
+              for(i in obj)
+                alert(obj[i]);
+              });
+        }
+        function loadJson(arr,div_id)
+        {
+            var txt = "";
+            for(i in arr)
+            {
+                txt+='<a href="windowpage.html">'+
+                '<div class="cart_data" style="margin-top: 0px;">'+  
+                '<img class="dishpic" src="'+arr[i].picture+'" alt="食物图片"/>'+'<img class="spf" src="Images/icon/arrow2.png" alt="详情"/>'+
+                '<span class="di_name">'+arr[i].description+'</span>';
+                
+                for(var j = 1;j<=5;j++)
+                {
+                    alert("j"+j);
+                   // if(j<arr.windows_data.score)
+                        txt+='<img class = "rank'+j+'" src="Images/icon/star1.png" alt=""/>';
+                    //else
+                        txt+='<img class = "rank'+j+'"src="Images/icon/star.png" alt=""/>';
+
+                }
+                txt+=    
+                '<span class="di_al">热卖：皮蛋瘦肉粥、紫米粥</span>'+
+                '<span class="di_date">销量'+arr[i].sold_num+ '</span></div></a>';
+            }
+            addChild(txt,div_id);
+        }
+        function loadObject(arr,div_id)
+        {
+            var txt = "";
+             txt+='<a href="windowpage.html" id = "' + arr['status']+'">'+
+                '<div class="cart_data" style="margin-top: 0px;">'+  
+                '<img class="dishpic" src="'+arr.picture+'" alt="食物图片"/>'+'<img class="spf" src="Images/icon/arrow2.png" alt="详情"/>'+
+                '<span class="di_name">'+arr.description+'</span>';
+                
+                for(var j = 1;j<=5;j++)
+                {
+                   // if(j<arr.windows_data.score)
+                        txt+='<img class = "rank'+j+'" src="Images/icon/star1.png" alt=""/>';
+                    //else
+                        txt+='<img class = "rank'+j+'"src="Images/icon/star.png" alt=""/>';
+
+                }
+                  
+                alert(txt);
+                txt+=    
+                '<span class="di_al">热卖：皮蛋瘦肉粥、紫米粥</span>'+
+                '<span class="di_date">销量'+arr.sold_num+ '</span></div></a>';
+            addChild(txt,div_id);
+        }
+        function addChild(txt,div_id)
+        {
+            var div = document.getElementById(div_id);
+            var new_div = document.createElement("DIV");
+            new_div.innerHTML = txt;
+            div.appendChild(new_div);
+        }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <img class="back" style="height: 24px;padding-top: 7px;" src="Images\icon\white_logoicon.png" alt=""/>
+            <table class="header_table" style="left: 24%;">
+                <tr>
+                    <td class="header_table_tdleft" style="background-color: rgba(255,255,255,0.3)"> &nbsp待送订单&nbsp </td>
+                    <td  class="header_table_tdleft"><a href="song_taken_page.html">&nbsp已接订单&nbsp</a></td>
+                    <td><a href="song_history_page.html">&nbsp历史订单&nbsp</a></td>
+                </tr>
+            </table>
+            <a href="camerapage.html"><img class="scan" src="Images/icon/scanicon.png" alt="scan"/></a>
+        </div>
+        <div class="clearfix_head"></div>
+        <div class="position">
+            <img src="Images/icon/coodicongrey.png" alt="cood:"/> 
+            <select id="messhall">
+                <option>学活一层</option>
+                <option>学活二层</option>
+                <option>四食堂一层</option>
+            </select>
+        </div>
+        
+        <div id="cart_body">
+            <a href="song_orderform.html">
+            <div class="cart_data">
+                <img class="dishpic" src="Images/dishes/dumpling.jpg" alt="食物图片"/>
+                <span class="di_name">水饺</span>
+                <span class="di_al">这枚订单正在等待好心人</span>
+                <input class="acpt_button" type="button" value="接 单"/>
+                <p class="di_date">期望送达时间：今日19:11前</p>
+            </div>
+            </a>
+            <a href="song_orderform.html">
+            <div class="cart_data">
+                <img class="dishpic" src="Images/dishes/fen.jpg" alt="食物图片"/>
+                <span class="di_name">牛肉粉</span>
+                <span class="di_al">这枚订单正在等待好心人</span>
+                <input class="acpt_button" type="button" value="接 单"/>
+                <p class="di_date">期望送达时间：今日19:31前</p>
+            </div>
+            </a>
+            <a href="song_orderform.html">
+            <div class="cart_data">
+                <img class="dishpic" src="Images/dishes/zhou.jpg" alt="食物图片"/>
+                <span class="di_name">皮蛋瘦肉粥</span>
+                <span class="di_al">这枚订单正在等待好心人</span>
+                <input class="acpt_button" type="button" value="接 单"/>
+                <p class="di_date">期望送达时间：今日19:51前</p>
+            </div>
+            </a>
+           
+        </div>      
+        <div class="clearfix_foot"></div>
+        <div class="footer">
+            <table>
+                <tr >
+                    <td><a href="shoppage.html" id="present"><img class="mymenu" id="menu_bar" src="Images/icon/shop.png" alt="菜单" /><br/>菜单</a></td>
+                    <td><a href="cartpage.html"><img class="mymenu" id="cart_bar" src="Images/icon/cart.png" alt="购物车" /><br/>&nbsp购物车</a></td>
+                    <td><a href="songpage.html"><img class="mymenu" id="song_bar" src="Images/icon/song1.png" alt="配送"><br/>配送</a> </td>
+                    <td><a href="mepage.html"><img class="mymenu" id="me_bar" src="Images/icon/me.png"  alt="我的" /><br/>我的</a></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

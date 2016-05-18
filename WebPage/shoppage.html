@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>顺道儿——菜单</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css\general_style.css" rel="stylesheet" type="text/css" />
+        <link href="css\shop_style.css" rel="stylesheet" type="text/css"/>
+        <link href="css\cart_style.css" rel="stylesheet" type="text/css" />
+        <script src = "js/ajax.js"></script>
+        <script src = "js/jquery-1.8.2.min.js"></script>
+        <script src="js/menu.js"></script>
+        <script language="JavaScript" defer="defer" src="js/jquery.qtip.min.js" type="text/javascript"></script>
+        <script type = "text/javascript">
+       // <!script type = "text/javascript">
+        var canteens;
+        var canteen;
+        var heatproducts;
+        var canteens_id = 1;
+        var product;
+         function load(url,div_id)
+        {
+            //调用ajax函数
+            //url = 'http://api.shundaoer.net.cn/v1/canteens/1/';
+            loadData('http://api.shundaoer.net.cn/v1/canteens/',canteens,'store_body');
+            loadData('http://api.shundaoer.net.cn/v1/canteens/'+canteens_id+'/',canteen,'store_body');
+            loadData('http://api.shundaoer.net.cn/v1/heatproducts/',heatproducts,'pic_box');
+            //loadData('http://api.shundaoer.net.cn/v1/products/'+canteens_id+'/',product,'store_body');
+            //loadData('http://api.shundaoer.net.cn/v1/user/');
+           // loadData('http://api.shundaoer.net.cn/v1/search/');
+            //loadData('http://api.shundaoer.net.cn/v1/login/');
+           // loadData('http://api.shundaoer.net.cn/v1/windows/'+canteens_id+'/');
+           // loadData('http://api.shundaoer.net.cn/v1/customers/');
+           // loadData('http://api.shundaoer.net.cn/v1/payments/');
+           
+            //loadCanteen('http://api.shundaoer.net.cn/v1/canteens/'+canteens_id+'/',canteen);
+            //loadCanteen('http://api.shundaoer.net.cn/v1/heatproducts/',heatproducts);
+            //ajax(url,function(str){
+            //将JSON 数据来生成原生的 JavaScript 
+            //  var arr = JSON.parse(str);
+              //alert(arr['windows_data']['score']);
+              //if(typeof(arr.length)=="undefined")loadObject(arr,div_id);
+              //else 
+              //loadJson(arr,div_id);
+            //});
+        }
+        function loadData(url,obj,div_id)
+        {
+            ajax(url,function(str){
+            //将JSON 数据来生成原生的 JavaScript 
+              obj = JSON.parse(str);
+              if(typeof(obj.length)=="undefined")loadObject(obj,div_id);
+              else 
+              loadJson(obj,div_id);
+              //for(i in obj)
+                //alert(obj[i]);
+              });
+        }
+        function loadJson(arr,div_id)
+        {
+            var txt = "";
+            for(i in arr)
+            {
+                txt+='<a href="windowpage.html">'+
+                '<div class="cart_data" style="margin-top: 0px;">'+  
+                '<img class="dishpic" src="'+arr[i].picture+'" alt="食物图片"/>'+'<img class="spf" src="Images/icon/arrow2.png" alt="详情"/>'+
+                '<span class="di_name">'+arr[i].description+'</span>';
+                
+                for(var j = 1;j<=5;j++)
+                {
+                   // alert("j"+j);
+                   // if(j<arr.windows_data.score)
+                        txt+='<img class = "rank'+j+'" src="Images/icon/star1.png" alt=""/>';
+                    //else
+                        txt+='<img class = "rank'+j+'"src="Images/icon/star.png" alt=""/>';
+
+                }
+                txt+=    
+                '<span class="di_al">热卖：皮蛋瘦肉粥、紫米粥</span>'+
+                '<span class="di_date">销量'+arr[i].sold_num+ '</span></div></a>';
+            }
+            addChild(txt,div_id);
+        }
+        function loadObject(arr,div_id)
+        {
+            var txt = "";
+             txt+='<a href="windowpage.html" id = "' + arr['status']+'">'+
+                '<div class="cart_data" style="margin-top: 0px;">'+  
+                '<img class="dishpic" src="'+arr.picture+'" alt="食物图片"/>'+'<img class="spf" src="Images/icon/arrow2.png" alt="详情"/>'+
+                '<span class="di_name">'+arr.description+'</span>';
+                
+                for(var j = 1;j<=5;j++)
+                {
+                   // if(j<arr.windows_data.score)
+                        txt+='<img class = "rank'+j+'" src="Images/icon/star1.png" alt=""/>';
+                    //else
+                        txt+='<img class = "rank'+j+'"src="Images/icon/star.png" alt=""/>';
+
+                }
+                  
+                //alert(txt);
+                txt+=    
+                '<span class="di_al">热卖：皮蛋瘦肉粥、紫米粥</span>'+
+                '<span class="di_date">销量'+arr.sold_num+ '</span></div></a>';
+            addChild(txt,div_id);
+        }
+        function addChild(txt,div_id)
+        {
+            var div = document.getElementById(div_id);
+            var new_div = document.createElement("DIV");
+            new_div.innerHTML = txt;
+            div.appendChild(new_div);
+        }
+        
+        /*
+        function loadData(url,obj,div_id)
+        {
+            ajax = (url,function(str){
+            obj = JSON.parse(str);
+            if(typeof(obj.length)=="undefined")loadObject(arr,div_id);
+            else 
+               loadJson(obj,div_id);
+            });
+        }
+        function load(url,div_id)
+        {
+            var arr;
+            loadData(url,arr,div_id);
+        }
+        function loadJson(arr,div_id)
+        {
+            var txt = "";
+            for(i in arr)
+            {
+
+                txt+='<a href="windowpage.html">'+
+                '<div class="cart_data" style="margin-top: 0px;">'+  
+                '<img class="dishpic" src="'+arr[i].picture+'" alt="食物图片"/>'+'<img class="spf" src="Images/icon/arrow2.png" alt="详情"/>'+
+                '<span class="di_name">'+arr[i].description+'</span>';
+                
+                for(var j = 0;j<(arr[i].id-'0');j++)
+                  txt+='<img class="rank1" src="Images/icon/star1.png" alt=""/>';
+                
+                txt+=    
+                '<span class="di_al">热卖：皮蛋瘦肉粥、紫米粥</span>'+
+                '<span class="di_date">销量'+arr[i].sold_num+ '</span></div></a>';
+            }
+            addChild(txt,div_id);
+        }
+        function loadObject(arr,div_id)
+        {
+            var txt = "";
+             txt+='<a href="windowpage.html">'+
+                '<div class="cart_data" style="margin-top: 0px;">'+  
+                '<img class="dishpic" src="'+arr.picture+'" alt="食物图片"/>'+'<img class="spf" src="Images/icon/arrow2.png" alt="详情"/>'+
+                '<span class="di_name">'+arr.description+'</span>';
+                
+                for(var j = 1;j<=5;j++)
+                {
+                    alert("j"+j);
+                   // if(j<arr.windows_data.score)
+                        txt+='<img class = "rank'+j+'" src="Images/icon/star1.png" alt=""/>';
+                    //else
+                        txt+='<img class = "rank'+j+'"src="Images/icon/star.png" alt=""/>';
+
+                }
+                  
+                alert(txt);
+                txt+=    
+                '<span class="di_al">热卖：皮蛋瘦肉粥、紫米粥</span>'+
+                '<span class="di_date">销量'+arr.sold_num+ '</span></div></a>';
+            addChild(txt,div_id);
+        }
+        function addChild(txt,div_id)
+        {
+            var div = document.getElementById(div_id);
+            var new_div = document.createElement("DIV");
+            new_div.innerHTML = txt;
+            div.appendChild(new_div);
+        }
+        */
+        </script>
+    </head>
+    <body onload="javascript:setInterval('change_pic();',10000);change_pic();load('http://api.shundaoer.net.cn/v1/home/','store_body');" >   
+    <div class="header">
+        <img class="back" style="height: 24px;padding-top: 7px;" src="Images\icon\white_logoicon.png" alt=""/>           
+        <a href="camerapage.html"><img class="scan" src="Images/icon/scanicon.png" alt="scan"/></a>
+        <img src="Images/icon/coodicon.png" alt="cood:" class="cood"/> 
+        
+            
+        
+        <select id="messhall">
+            <option value = "1">学活一层</option>
+            <option value = "2">学活二层</option>
+            <option value = "3">四食堂一层</option>
+        </select>
+    </div>
+    <div class="clearfix_head"></div>
+
+    <div>
+        <a href="searchpage.html"><input type="text" class="search" placeholder="搜索热门菜品"/></a>
+    </div>
+    
+    <div class="pic_box"> 
+        <div class="pic_menu">
+            <a onclick="change_pic()"><img src="Images/icon/change.png" alt="change"/> </a>
+        </div>       
+        <img class="pic_lo"  id="pic_lo" alt=""/>
+    </div>
+    <div id = "store_body">
+	<a href="windowpage.html" id = "cant_id">
+	    <div class="cart_data" style="margin-top: 0px;">		
+                <img class="dishpic" src="Images/dishes/fen.jpg" alt="食物图片"/><img class="spf" src="Images/icon/arrow2.png" alt="详情"/>
+                <span class="di_name">一号窗口</span>
+                <img class="rank1" src="Images\icon\star1.png" alt=""/><img class="rank2" src="Images\icon\star1.png" alt=""/>
+                <img class="rank3" src="Images\icon\star1.png" alt=""/><img class="rank4" src="Images\icon\star1.png" alt=""/>
+                <img class="rank5" src="Images\icon\star.png" alt=""/>     
+                <span class="di_al">热卖：黄焖鸡米饭、云南米线</span>
+                <span class="di_date">销量 1.1 万</span>
+            </div>
+        </a>
+    <a href="windowpage.html">
+	    <div class="cart_data" style="margin-top: 0px;">		
+                <img class="dishpic" src="Images/dishes/zhou.jpg" alt="食物图片"/><img class="spf" src="Images/icon/arrow2.png" alt="详情"/>
+                <span class="di_name">二号窗口</span>
+                <img class="rank1" src="Images\icon\star1.png" alt=""/><img class="rank2" src="Images\icon\star1.png" alt=""/>
+                <img class="rank3" src="Images\icon\star1.png" alt=""/><img class="rank4" src="Images\icon\star1.png" alt=""/>
+                <img class="rank5" src="Images\icon\star.png" alt=""/>     
+                <span class="di_al">热卖：皮蛋瘦肉粥、紫米粥</span>
+                <span class="di_date">销量 2 万</span>
+            </div>
+        </a>
+     </div>  
+    <div class="clearfix_foot"></div>
+    <div class="footer" > 
+            <table>
+                <tr >
+                    <td><a href="shoppage.html"  id="present"><img class="mymenu" id="menu_bar" src="Images/icon/shop1.png" alt="菜单" /><br/>菜单</a></td>
+                    <td><a href="cartpage.html"><img class="mymenu" id="cart_bar" src="Images/icon/cart.png" alt="订单" /><br/>订单</a></td>
+                    <td><a href="songpage.html"><img class="mymenu" id="song_bar" src="Images/icon/song.png" alt="配送"><br/>配送</a> </td>
+                    <td><a href="mepage.html"><img class="mymenu" id="me_bar" src="Images/icon/me.png"  alt="我的" /><br/>我的</a></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

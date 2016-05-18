@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>订单</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css\general_style.css" rel="stylesheet" type="text/css" />
+        <link href="css\orderform_style.css" rel="stylesheet" type="text/css" />
+        <script src="js/cookies.js"></script>
+    </head>
+    <body onload="initOrderform(1)">
+        <div class="header">
+            <a href="windowpage.html"><img class="back" src="Images/icon/arrow.png" alt="返回"/></a>
+            <span class="theme" >&nbsp;&nbsp;订单详情</span>
+        </div>
+        <div class="clearfix_head"></div>
+        <div class="cus_info">
+            <img class="cood" src="Images/icon/coodicongrey.png" alt="cood:"/> 
+            <p>收货人：<span>王同学</span><span class="cus_phone">13822222222</span></p>
+            <img class="spf" src="Images/icon/arrow2.png" alt="详情"/>
+            <p>送达地址：<span>十六号宿舍楼414</span></p>
+        </div>
+        
+        <div class="order_info">
+            <p class="order_name">一号窗口 · 学活餐厅</p>
+            <div class="order_menu" id="order_menu">
+                <br/>
+                <div id="order_cart">
+                
+                </div>
+                <p class="order_money">订单金额：<span id="order_money">15 元</span></p>
+            </div>
+            <div class="discount_info"><p><span class="discount_type">优惠券</span> <span class="discount_amt">¥  0 </span></p></div>
+            <div class="cost_info"><p>实付金额： <span class="cost_money" id="cost_money">13 元</span></p></div>
+        </div>
+        <div  class="order_info">
+            <p class="pay_method">支付方式：
+                <input type="radio" value="alipay"/><img src="Images/icon/alipay.png" alt="alipay" />
+            </p>
+        </div>
+        
+        <div class="clearfix_foot"></div>
+        <a href="paypage.html"><div class="order_footer">
+            <span>确认下单</span>
+        </div></a>
+    </body>
+</html>
