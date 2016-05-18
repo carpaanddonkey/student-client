@@ -11,6 +11,94 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css\general_style.css" rel="stylesheet" type="text/css" />
         <link href="css\cart_style.css" rel="stylesheet" type="text/css" />
+        <script>
+        function load(url,div_id)
+        {
+            //调用ajax函数
+            //url = 'http://api.shundaoer.net.cn/v1/canteens/1/';
+            loadData('http://api.shundaoer.net.cn/v1/canteens/',canteens,'store_body');
+            loadData('http://api.shundaoer.net.cn/v1/canteens/'+canteens_id+'/',canteen,'store_body');
+            loadData('http://api.shundaoer.net.cn/v1/heatproducts/',heatproducts,'pic_box');
+
+            //loadCanteen('http://api.shundaoer.net.cn/v1/canteens/'+canteens_id+'/',canteen);
+            //loadCanteen('http://api.shundaoer.net.cn/v1/heatproducts/',heatproducts);
+            //ajax(url,function(str){
+            //将JSON 数据来生成原生的 JavaScript 
+            //  var arr = JSON.parse(str);
+              //alert(arr['windows_data']['score']);
+              //if(typeof(arr.length)=="undefined")loadObject(arr,div_id);
+              //else 
+              //loadJson(arr,div_id);
+            //});
+        }
+        function loadData(url,obj,div_id)
+        {
+            ajax(url,function(str){
+            //将JSON 数据来生成原生的 JavaScript 
+              obj = JSON.parse(str);
+              if(typeof(obj.length)=="undefined")loadObject(obj,div_id);
+              else 
+              loadJson(obj,div_id);
+              for(i in obj)
+                alert(obj[i]);
+              });
+        }
+        function loadJson(arr,div_id)
+        {
+            var txt = "";
+            for(i in arr)
+            {
+                txt+='<a href="windowpage.html">'+
+                '<div class="cart_data" style="margin-top: 0px;">'+  
+                '<img class="dishpic" src="'+arr[i].picture+'" alt="食物图片"/>'+'<img class="spf" src="Images/icon/arrow2.png" alt="详情"/>'+
+                '<span class="di_name">'+arr[i].description+'</span>';
+                
+                for(var j = 1;j<=5;j++)
+                {
+                    alert("j"+j);
+                   // if(j<arr.windows_data.score)
+                        txt+='<img class = "rank'+j+'" src="Images/icon/star1.png" alt=""/>';
+                    //else
+                        txt+='<img class = "rank'+j+'"src="Images/icon/star.png" alt=""/>';
+
+                }
+                txt+=    
+                '<span class="di_al">热卖：皮蛋瘦肉粥、紫米粥</span>'+
+                '<span class="di_date">销量'+arr[i].sold_num+ '</span></div></a>';
+            }
+            addChild(txt,div_id);
+        }
+        function loadObject(arr,div_id)
+        {
+            var txt = "";
+             txt+='<a href="windowpage.html" id = "' + arr['status']+'">'+
+                '<div class="cart_data" style="margin-top: 0px;">'+  
+                '<img class="dishpic" src="'+arr.picture+'" alt="食物图片"/>'+'<img class="spf" src="Images/icon/arrow2.png" alt="详情"/>'+
+                '<span class="di_name">'+arr.description+'</span>';
+                
+                for(var j = 1;j<=5;j++)
+                {
+                   // if(j<arr.windows_data.score)
+                        txt+='<img class = "rank'+j+'" src="Images/icon/star1.png" alt=""/>';
+                    //else
+                        txt+='<img class = "rank'+j+'"src="Images/icon/star.png" alt=""/>';
+
+                }
+                  
+                alert(txt);
+                txt+=    
+                '<span class="di_al">热卖：皮蛋瘦肉粥、紫米粥</span>'+
+                '<span class="di_date">销量'+arr.sold_num+ '</span></div></a>';
+            addChild(txt,div_id);
+        }
+        function addChild(txt,div_id)
+        {
+            var div = document.getElementById(div_id);
+            var new_div = document.createElement("DIV");
+            new_div.innerHTML = txt;
+            div.appendChild(new_div);
+        }
+        </script>
     </head>
     <body>
         <div class="header">

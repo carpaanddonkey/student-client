@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+ //var windowData ;
+// loadData('http://api.shundaoer.net.cn/v1/home',windowData);
+
 function initPaypage(win){
+
     cart_money = getCookie("cartmoney"+win);
     document.getElementById('cost_money').innerHTML = '¥ '+ cart_money;
 }
