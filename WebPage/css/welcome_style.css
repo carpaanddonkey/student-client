@@ -40,6 +40,7 @@ body {
     border: 3px;
 }
 #submit{
+    vertical-align: middle;
     margin-top: 20px;
     background-color: #08e ;
     border:0px;
@@ -51,8 +52,7 @@ body {
     font-family: "黑体";
 }
 #submit:focus{
-    background-color: lightskyblue;
-    
+    background-color: lightskyblue;  
 }
 .icon{
     align-items: center;

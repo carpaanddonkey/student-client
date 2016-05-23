@@ -12,8 +12,64 @@ and open the template in the editor.
         <link href="css\general_style.css" rel="stylesheet" type="text/css" />
         <link href="css\shop_style.css" rel="stylesheet" type="text/css"/>
         <link href="css\cart_style.css" rel="stylesheet" type="text/css" />
-        <script src="js/menu.js"></script>
+        <script src = "js/jquery-1.8.2.min.js"></script>
+        <script src = "js/ajax.js"></script>
+        <script type="text/javascript">
+        var url;
+        var txt = "";
         
+        
+        function getData(div_id){
+            var query_param = document.getElementById('search').value;
+            url =  'http://api.byway.net.cn/v1/search/?query_param='+query_param;
+
+            $.ajax({
+                    async:false,
+                    type:"get",
+                    url:url,
+                    success:function(str){
+                        var obj = JSON.parse(str);
+                        loadObject(obj,div_id);
+                        /*
+                        var jsonw = eval(obj.windows)
+                        {
+                            loadObject(jsonw,windowl);
+                        }
+                        var jsonp = eval(obj.products)
+                        {
+                            
+                            loadObject(jsonp[i],productl);
+                        }
+                        */
+                    },
+                    error:function(jsonResult){
+                        alert("error");
+                    }
+                });
+                
+        }
+        function loadObject(arr,div_id)
+        {
+            var txt  = "";
+            txt+='<p>店铺：</p>';
+            for(i in arr.windows)
+            {
+                txt += "<a href='windowpage.html'>"+
+                    "<div class='search_item'>"+       
+                    "<span>"+arr.windows[i].name+"</span></div></a>";
+            }
+            txt+='<div class="clearfix_head"></div><p>产品</p>';
+            for(i in arr.products)
+            {
+                txt += "<a href='windowpage.html'>"+
+                    "<div class='search_item'>"+       
+                    "<span>"+arr.products[i].name+"</span></div></a>";
+            }
+            document.getElementById(div_id).innerHTML = txt;
+        }
+
+        
+        </script>
     </head>
     <body>   
     <div class="header">
@@ -22,24 +78,27 @@ and open the template in the editor.
     </div>
     <div class="clearfix_head"></div>
     <div>
-        <input type="text" class="search_2" placeholder="搜索热门菜品" autofocus/>
-        <input type="button" value="搜 索" class="search_button"/>
+        <input type="text" id = "search" class="search_2" placeholder="搜索热门菜品" autofocus/>
+        <input type="button" value="搜 索" onclick = "getData('windowl')"class="search_button"/>
     </div>
-    <a href="windowpage.html">
-	<div class="search_item">		
-            <span>牛肉粉</span>
-        </div>
-    </a>
-    <a href="windowpage.html">
-	<div class="search_item">		
-            <span>瓦罐汤</span>
-        </div>
-    </a>
-    <a href="windowpage.html">
-	<div class="search_item">		
-            <span>瓦罐汤</span>
-        </div>
-    </a>
+    <div id = 'windowl'>
+        <a href="windowpage.html">
+           <div class="search_item">        
+                <span>牛肉粉</span>
+            </div>
+        </a>
+    <div class="clearfix_head"></div>
+        <a href="windowpage.html">
+           <div class="search_item">        
+                <span>瓦罐汤</span>
+            </div>
+        </a>
+        <a href="windowpage.html">
+            <div class="search_item">       
+                <span>瓦罐汤</span>
+            </div>
+        </a>
+    <div>
     </body>
 </html>
 

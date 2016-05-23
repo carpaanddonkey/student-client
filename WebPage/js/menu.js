@@ -4,21 +4,17 @@
  * and open the template in the editor.
  */
 var i_pic = 0;
-var num_pic = 2; 
+var num_pic = 4; 
+//setInterval('change_pic(pic_array);',10000);
 
-function change_pic(){
-    var pic_array = new Array(num_pic);
-    pic_array[0] = "Images/shophot/hot.jpg";
-    pic_array[1] = "Images/shophot/hot2.jpg";
-    
+function change_pic(pic_array){
     if(i_pic===num_pic-1)
         i_pic = 0;
     else
         i_pic++;
-    
     document.getElementById('pic_lo').src = pic_array[i_pic];
-    
 }
+
 function changePages(num){
     document.getElementById("iframe").innerHTML = "<iframe src='iframepage.html#i"+num+"'></iframe>";
    
